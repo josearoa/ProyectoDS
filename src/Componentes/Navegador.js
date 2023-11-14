@@ -1,6 +1,7 @@
 import React from "react";
 import "../hola.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function Nada(){
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
