@@ -7,7 +7,6 @@ const MovieCarousel = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    // Lógica para obtener datos de la API de TMDb
     const fetchData = async () => {
       try {
         const apiKey = 'b8a0b162efaf55fd9c14fc56b259edec'; 
@@ -19,7 +18,6 @@ const MovieCarousel = () => {
         console.error('Error al obtener datos de la API', error);
       }
     };
-
     fetchData();
   }, []);
 
@@ -36,7 +34,7 @@ const MovieCarousel = () => {
            <div className="overlay"></div>
           <Carousel.Caption>
             <h3>{movie.title}</h3>
-            <p>{movie.overview}</p>
+            
           </Carousel.Caption>
         </Carousel.Item>
       ))}
