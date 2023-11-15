@@ -5,15 +5,13 @@ import Localidades from './Componentes/Localidades';
 import Confiteria from './Componentes/Confiteria';
 import Navbar  from './Componentes/Navbar';
 import Footer from './Componentes/Footer';
+import Carousel from './Componentes/Carousel';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <HomePage/>
-      <Cartelera/>
-      <Localidades/>
-      <Confiteria/>
+      <Carousel/>
       <Footer/>
     </div>
   );
