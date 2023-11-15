@@ -1,9 +1,179 @@
-.Nada{
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  font-size: 40px;
-  text-align: center;
-  font-weight: 700;
+body{
+  background-color:#0D1489  ;
+  margin: 0;
 }
+
+
+/* ----------------NAVBAR--------------------*/
+.nav{
+  overflow: hidden;
+  width: 100%;
+  height: 75px;
+  background-color: #ffffff0d;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 20; /* Asegura un z-index alto */
+  top: 0; /* Coloca la barra en la parte superior */
+
+}
+
+.nav-item{                                           
+  color: rgba(255, 255, 255, 0.411);
+  padding: 20px;
+  text-decoration: none;
+  transition: .3s;
+  margin: 0 6px;
+  z-index: 1;
+  font-weight: 500;
+  position: relative;
+
+  
+
+  &:before{
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color:#4659DF;
+    opacity: 0;
+    transition: .3s;
+  }
+}
+
+.nav-item.is-active {
+  font-weight: bold;
+  color: white; 
+}
+
+.nav-item:not(.is-active):hover::before{
+  opacity: 1;
+  bottom: 0;
+}
+
+.nav-item:not(.is-active):hover{color: white;}
+
+.nav-indicator{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  transition: .4s;
+  height: 5px;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
+}
+
+@media (max-width: 580px){
+  .nav{overflow:auto;}
+}
+
+.nav-button1 {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #4659DF; /* Color del texto */
+  border: 2px solid #4659DF; /* Borde del botón */
+  border-radius: 20px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave al pasar el ratón */
+}
+
+.nav-button1:hover {
+  background-color: #4659DF; /* Cambia el color de fondo al pasar el ratón */
+  color: #fff; /* Cambia el color del texto al pasar el ratón */
+}
+
+
+/* -------------LOGIN------------------ */
+/* Estilos para el formulario de autenticación */
+.auth-container {
+  margin-top: 50px;
+
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-header {
+
+  color: black;
+  text-align: center;
+  padding: 15px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.auth-header h2 {
+  margin: 0;
+}
+
+.auth-body {
+  padding: 20px;
+}
+
+.auth-body label {
+  font-weight: bold;
+  
+}
+
+.auth-footer {
+  text-align: center;
+  padding: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.auth-footer p {
+  margin: 0;
+}
+
+.auth-footer .link {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.auth-footer .link:hover {
+  color: #0056b3;
+}
+
+/* ---------LISTA DESPLEGABLE------------- */
+
+/* Estilo para el botón y la lista desplegable en la barra de navegación */
+.nav-dropdown {
+  margin-left: 20px; /* Ajusta el margen según sea necesario */
+}
+
+.nav-dropdown .btn-outline-primary {
+  border-radius: 20px; /* Bordes redondeados para el botón */
+  margin-right: 10px; /* Espacio entre el botón y la lista desplegable */
+}
+
+.nav-dropdown .dropdown-menu {
+  border-radius: 10px; /* Bordes redondeados para la lista desplegable */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.nav-dropdown .dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-dropdown .dropdown-item:hover {
+  background-color: #f8f9fa; /* Cambia el color de fondo al pasar el ratón */
+}
+
 .custom-modal {
   display: flex;
   align-items: last baseline;
@@ -13,7 +183,6 @@
 .container {
   max-width: 1400px;
   margin: auto;
-  padding: 20px;
 }
 
 .overlay {
@@ -46,4 +215,25 @@
 img {
   max-width: 100%;
   height: auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
 }

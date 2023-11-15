@@ -1,9 +1,21 @@
-import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Carousel from './Carousel';
+import MovieCard from './MovieCard';
 
-function HomePage(){
-    return (
-        <h1>HomePage</h1>
-    );}
+const Homepage = () => {
+  const [someState, setSomeState] = useState(null);
 
-export default HomePage
+  useEffect(() => {
+    // Lógica de efecto
+  }, []);
+
+  return (
+    <div>
+      <Carousel />
+      <MovieCard/>
+    </div>
+  );
+};
+
+export default Homepage;
