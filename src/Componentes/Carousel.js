@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Carousel } from 'react-bootstrap';
-import { TiTicket } from "react-icons/ti";
+import { TiTicket } from 'react-icons/ti';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-
+import { NavLink } from 'react-router-dom';
 
 const MovieCarousel = () => {
   const [movies, setMovies] = useState([]);
@@ -12,7 +12,7 @@ const MovieCarousel = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiKey = 'b8a0b162efaf55fd9c14fc56b259edec'; 
+        const apiKey = 'b8a0b162efaf55fd9c14fc56b259edec';
         const response = await axios.get(
           `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=es`
         );
@@ -38,7 +38,11 @@ const MovieCarousel = () => {
             <Carousel.Caption>
               <h3>{movie.title}</h3>
               <div className="button-container">
-                <button className="action-button"> <TiTicket /> Comprar</button>
+                <NavLink to={`/DetallesPelicula/${movie.id}`} className="nav-link">
+                  <button className="action-button">
+                    <TiTicket /> Comprar
+                  </button>
+                </NavLink>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
