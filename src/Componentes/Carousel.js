@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Carousel } from 'react-bootstrap';
-import './../App.css';
 import { TiTicket } from "react-icons/ti";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 
 
 const MovieCarousel = () => {
@@ -24,7 +25,7 @@ const MovieCarousel = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container mb-10">
       <Carousel interval={3000}>
         {movies.map((movie) => (
           <Carousel.Item key={movie.id}>

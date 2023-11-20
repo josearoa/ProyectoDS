@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css'; // Importa los estilos CSS externos
+import '../App.css';
 
 const AuthForm = () => {
   const [loginData, setLoginData] = useState({ email: '', password: '' });
@@ -30,6 +30,7 @@ const AuthForm = () => {
     // Lógica para enviar datos de registro
     console.log('Signup Data:', signupData);
   };
+
 
   return (
     <div className="auth-container">
@@ -116,5 +117,6 @@ const AuthForm = () => {
     </div>
   );
 };
+
 
 export default AuthForm;

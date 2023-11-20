@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import akira from "../imagenes/akira.png";
+import { Modal, Button } from 'react-bootstrap';
 import "../hola.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function CuerpoPagina() {
   const [showModal, setShowModal] = useState(false);

@@ -1,28 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './Componentes/Homepage';
-import Cartelera from './Componentes/Cartelera';
-import Localidades from './Componentes/Localidades';
-import Confiteria from './Componentes/Confiteria';
-import Navbar  from './Componentes/Navbar';
-import Login from './Componentes/Login';
-import Footer from './Componentes/Footer';
+import HomePage from './Paginas/Homepage';
+import Cartelera from './Paginas/Cartelera';
+import Localidades from './Paginas/Localidades';
+import Confiteria from './Paginas/Confiteria';
+import Navbar from './Componentes/Navbar';
+import Login from './Paginas/Login';
+import DetallesPelicula from "./Paginas/DetallesPelicula"
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar className="z-index 20"/>
+        <Navbar />
         <Routes>
-          <Route path="/Homepage" className="z-index 10"  element={<HomePage />} />
+          <Route path="/Homepage" element={<HomePage />} />
           <Route path="/Cartelera" element={<Cartelera />} />
           <Route path="/Localidades" element={<Localidades />} />
           <Route path="/Confiteria" element={<Confiteria />} />
-          <Route path='/Login' element={<Login/>}/>
+          <Route path='/Login' element={<Login />} />
+          <Route path="/DetallesPelicula/:id" element={<DetallesPelicula />} /> {/* Esta es la nueva línea */}
         </Routes>
-       {/*  <Footer /> */}
       </div>
-      <HomePage />
     </Router>
   );
 }

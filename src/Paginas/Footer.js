@@ -1,6 +1,5 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 function Footer() {
   return (
     <footer className="container-fluid bg-dark text-white py-3">
