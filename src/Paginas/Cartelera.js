@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PeliculaConHover from '../Componentes/PeliculaConHover'; // Importa el componente PeliculaConHover
+import PeliculaConHover from '../Componentes/PeliculaConHover'; 
 
 function Cartelera() {
     const API_URL = "https://api.themoviedb.org/3";
