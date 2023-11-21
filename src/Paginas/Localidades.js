@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../App.css';
 import Cine from '../Componentes/Cine';
 import cine1 from '../imagenes/cine1.png';

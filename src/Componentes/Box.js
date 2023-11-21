@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Box({ comboName, comboPrice, comboImage, comboDescription }) {
-  const [quantity, setQuantity] = useState(0);
 
   return (
     <div className='contenido'>
