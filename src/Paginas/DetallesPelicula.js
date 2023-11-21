@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import DiasSemanaNav from '../Componentes/DiasSemanaNav';
+import DiasSemanaNav from "../Componentes/DiasSemanaNav"
 
 const DetallesPelicula = () => {
     const { id } = useParams();
@@ -45,32 +45,26 @@ const DetallesPelicula = () => {
     }, [id]);
 
     return (
-        <div className="container">
-            <h1>Detalles de la Película</h1>
-            {pelicula && (
-                <div className="movie-details-box">
-                    <div className="row">
-                        <div className="col-lg-3">
-                            <img src={`${IMAGE_PATH}/${pelicula.poster_path}`} alt={pelicula.title} className="img-fluid" />
-                        </div>
-                        <div className="col-lg-9">
-                            <h2 className="center-text">{pelicula.title}</h2>
-                            <p>{pelicula.overview}</p>
-                            {pelicula.tagline && <p>{pelicula.tagline}</p>}
-                            <div className="row">
+        <div >
+            <div className='background-image'></div>
+            <div className="container superp">
+                {pelicula && (
+                    <div >
+                        <div className="row">
+                            <div className="col-lg-3">
+                                <img src={`${IMAGE_PATH}/${pelicula.poster_path}`} alt={pelicula.title} className="img-fluid" />
                                 <div className="col-lg-4">
                                     <div>
-                                        <h3>Director:</h3>
-                                        <p>{director}</p>
+                                        <h3 className='text-white'>Director:</h3>
+                                        <p className='text-white'>{director}</p>
                                     </div>
                                 </div>
-                                <div className="col-lg-4">
-
+                                <div >
                                 </div>
-                                <div className="col-lg-4">
+                                <div >
                                     <div>
-                                        <h3>Reparto:</h3>
-                                        <ul>
+                                        <h3 className='text-white'>Reparto:</h3>
+                                        <ul className='text-white'>
                                             {reparto.map(actor => (
                                                 <li key={actor.id}>{actor.name}</li>
                                             ))}
@@ -78,13 +72,26 @@ const DetallesPelicula = () => {
                                     </div>
                                 </div>
                             </div>
+                            <div className="col-lg-9 ">
+                                <div className="movie-details-box">
+                                    <h2 className="center-text">{pelicula.title}</h2>
+                                    <p>{pelicula.overview}</p>
+                                    {pelicula.tagline && <p>{pelicula.tagline}</p>}
+                                </div>
+                                <div className='row'>
+                                    <div className='col-lg-2'></div>
+                                    <div className="movie-details-box col-lg-8">
+                                    <DiasSemanaNav/>
+                                    </div>
+                                </div>    
+                            </div>
                         </div>
                     </div>
-                <DiasSemanaNav/>
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
 };
 
 export default DetallesPelicula;
+

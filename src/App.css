@@ -560,3 +560,13 @@ body{
   margin-top: 20px;
 }
 
+
+.background-image{
+  position: relative; 
+  background-image: url("./imagenes/trailer.png");
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  background-attachment: fixed;
+  z-index: 1;
+}
