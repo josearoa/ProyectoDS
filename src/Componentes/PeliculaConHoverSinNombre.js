@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 
 const PeliculaConHover = ({ pelicula, imagePath }) => {
     return (
-        <div className="mb-2">
+        <div className="col-lg-4 mb-1">
             <div className="card" style={{ width: '18rem' }}>
                 <div className="overlay" >
                 <NavLink to={`/DetallesPelicula/${pelicula.id}`} className="nav-link">
-                        <button className="btn btn-primary card-button">
+                        <button className="btn btn-primary rounded-pill card-button">
                             Ver detalles
                         </button>
                 </NavLink>

@@ -10,6 +10,7 @@ import DetallesPelicula from "./Paginas/DetallesPelicula"
 import Footer from './Componentes/Footer';
 import MovieCarousel from './Componentes/Carousel';
 import Acerca from './Paginas/Acerca';
+import Formulario from './Paginas/Formulario';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -25,8 +26,10 @@ function App() {
           <Route path='/Login' element={<Login />} />
           <Route path="/DetallesPelicula/:id" element={<DetallesPelicula />} />
           <Route path="/Carousel" element={<MovieCarousel />} />
+          <Route path="/Acerca" element={<Acerca />} />
+          <Route path="/Form" element={<Formulario />} />
         </Routes>
-          <div className="mt-5">
+          <div className="footer mt-auto py-3 bg-dark">
           <Footer />
           </div>
       </div>

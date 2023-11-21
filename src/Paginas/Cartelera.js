@@ -36,7 +36,7 @@ function Cartelera() {
 
     return (
         <div className="container">
-            <h1 className="text-center mt-4 mb-3">Cartelera</h1>
+            <h1 className="text-white text-center mt-4 mb-3">Cartelera</h1>
             <div className="mb-4">
                 <input
                     type="text"

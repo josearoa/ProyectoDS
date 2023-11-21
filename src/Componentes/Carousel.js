@@ -29,22 +29,24 @@ const MovieCarousel = () => {
       <Carousel interval={3000}>
         {movies.map((movie) => (
           <Carousel.Item key={movie.id}>
-            <img
-              className="d-block w-100" 
-              src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-              alt={movie.title}
-            />
-            <div className="overlay-container"></div>
-            <Carousel.Caption>
-            <h3 className="title-with-stroke text-white">{movie.title}</h3>
-              <div className="button-container">
-                <NavLink to={`/DetallesPelicula/${movie.id}`} className="nav-link">
-                  <button className="btn btn-danger rounded-pill action-button-carousel">
-                    <TiTicket /> Comprar
-                  </button>
-                </NavLink>
-              </div>
-            </Carousel.Caption>
+            <div className="carousel-item-container">
+              <img
+                className="d-block w-100" 
+                src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                alt={movie.title}
+              />
+              <div className="opacity-layer"></div> {/* Capa con opacidad */}
+              <Carousel.Caption>
+                <h3>{movie.title}</h3>
+                <div className="button-container">
+                  <NavLink to={`/DetallesPelicula/${movie.id}`} className="nav-link">
+                    <button className="btn btn-danger rounded-pill action-button-carousel">
+                      <TiTicket /> Comprar
+                    </button>
+                  </NavLink>
+                </div>
+              </Carousel.Caption>
+            </div>
           </Carousel.Item>
         ))}
       </Carousel>

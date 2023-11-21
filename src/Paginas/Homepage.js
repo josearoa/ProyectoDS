@@ -34,15 +34,15 @@ const Homepage = () => {
   return (
     <div>
       <Carousel />
-      <h1 className="text-white text-center mt-5">Peliculas</h1>
-      <div className="row d-flex justify-content-center align-items-center">
-        {peliculas.map((pelicula) => (
-          <div key={pelicula.id} className="col-md-4">
-            <PeliculaConHoverSinNombre pelicula={pelicula} imagePath={IMAGE_PATH} />
-          </div>
-        ))}
+      <div className="container mb-2">
+            <h1 className="text-white text-center mt-4 mb-3">Peliculas</h1>
+            <div className="row">
+                {peliculas.map((pelicula) => (
+                    <PeliculaConHoverSinNombre key={pelicula.id} pelicula={pelicula} imagePath={IMAGE_PATH} />
+                ))}
+            </div>
+        </div>
       </div>
-    </div>
   );
 };
 

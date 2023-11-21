@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css';
 
 function Cine({ cineName, cineImage, cineDescription }) {
   const [quantity, setQuantity] = useState(0);

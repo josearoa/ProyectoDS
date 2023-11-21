@@ -1,10 +1,17 @@
-
 body{
   background: linear-gradient(to bottom, #0E2287, #1832D6); 
   margin: 0;
 }
 
-
+.opacity-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  pointer-events: none; /* Permite hacer clic a través de la capa */
+}
 /* ----------------NAVBAR--------------------*/
 .nav{
   overflow: hidden;
@@ -113,7 +120,7 @@ body{
 
 .auth-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 800px;
   margin: auto;
   background-color: white;
   border-radius: 8px;
@@ -379,9 +386,14 @@ body{
   margin: 0 auto; /* Centra el contenido horizontalmente */
 }
 
-.cines, hometitle h1{
+.cines h1{
   text-align: center; /* Centra el título */
-  color: #FFF; /* Color del texto */
+  color: white; /* Color del texto */
+
+}
+
+.cine-name{
+  color: black; /* Color del texto */
 
 }
 
@@ -444,22 +456,32 @@ body{
 
 .main{
   margin-top: 25px;
-  -webkit-box-shadow: 0px 5px 16px 5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 5px 16px 5px rgba(0,0,0,0.75);
-  box-shadow: 0px 5px 16px 5px rgba(0,0,0,0.75);
-  background-color: #B1D6CB ;
+  background-color: white;
   padding: 20px;
 }
 
 .img-name img{
-  width: 50%;
+  width: 40%;
   margin: 0 55px;
   border-radius: 10px;
 }
 
 .titlenames{
   text-align: center;
+  font-size: 25px;
+}
+
+.subtitles{
+  text-align: center;
   font-size: 35px;
+}
+
+.parrafos{
+  margin: auto;
+  margin-bottom: 10px;
+  width: 50%;
+  text-align: center;
+  font-size: 15px;
 }
 
 .names{
@@ -537,3 +559,4 @@ body{
   padding: 20px;
   margin-top: 20px;
 }
+
