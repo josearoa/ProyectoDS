@@ -1,5 +1,6 @@
+
 body{
-  background-color:#0D1489  ;
+  background: linear-gradient(to bottom, #0E2287, #1832D6); 
   margin: 0;
 }
 
@@ -8,27 +9,27 @@ body{
 .nav{
   overflow: hidden;
   width: 100%;
-  height: 75px;
-  background-color: #ffffff0d;
+  height: 80px;
+  background-color: white;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  top: 0; /* Coloca la barra en la parte superior */
-
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 .nav-item{                                           
-  color: rgba(255, 255, 255, 0.411);
+  color: #0e22878b;
   padding: 20px;
   text-decoration: none;
   transition: .3s;
   margin: 0 6px;
+  z-index: 1;
   font-weight: 500;
   position: relative;
-
-  
+  font-size: 20px;  
 
   &:before{
     content: "";
@@ -45,7 +46,7 @@ body{
 
 .nav-item.is-active {
   font-weight: bold;
-  color: white; 
+  color: red; 
 }
 
 .nav-item:not(.is-active):hover::before{
@@ -53,15 +54,15 @@ body{
   bottom: 0;
 }
 
-.nav-item:not(.is-active):hover{color: white;}
+.nav-item:not(.is-active):hover{color: #0E2287;}
 
 .nav-indicator{
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 4px;
   transition: .4s;
   height: 5px;
+  z-index: 1;
   border-radius: 8px 8px 0 0;
 }
 
@@ -85,28 +86,25 @@ body{
   color: #fff; /* Cambia el color del texto al pasar el ratón */
 }
 
-.nav-button1 {
-  margin-left: 20px;
-  display: inline-block;
-  padding: 8px 18px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #4659DF; /* Color del texto */
-  border: 2px solid #4659DF; /* Borde del botón */
-  border-radius: 20px;
-  transition: background-color 0.3s, color 0.3s; /* Transición suave al pasar el ratón */
-}
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 100%; /* Ancho completo en dispositivos móviles */
+    height: auto; /* Ajustar altura automáticamente */
+    flex-direction: column; /* Cambiar a dirección de columna */
+    padding: 10px 0; /* Ajustar el relleno vertical */
+  }
 
-.nav-button1:hover {
-  background-color: #4659DF; /* Cambia el color de fondo al pasar el ratón */
-  color: #fff; /* Cambia el color del texto al pasar el ratón */
-}
+  .nav-item {
+    margin: 10px 0; /* Espaciado entre elementos */
+    padding: 10px 20px; /* Ajustar relleno para facilitar la selección */
+    font-size: 18px; /* Reducir tamaño de fuente */
+  }
 
-.nav-button1:hover svg {
-  fill: #4659DF; /* Cambia el color del icono al pasar el ratón */
-  stroke: #fff; /* Cambia el color del trazo del icono al pasar el ratón */
-}
+  .nav-indicator {
+    display: none; /* Ocultar indicador en dispositivos móviles */
+  }
 
+}
 
 /* -------------LOGIN------------------ */
 .auth-container {
@@ -176,10 +174,9 @@ body{
 }
 
 /* -----------CONFITERIA-------------------- */
-
 /* Estilos base */
 .confiteria {
-  background-color: gray;
+  background-color: gray; /* Cambia el color de fondo */
   margin: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -202,6 +199,8 @@ body{
   align-items: center;
   padding: 20px;
   text-align: center;
+  border-radius: 10px; /* Redondear los bordes */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra */
 }
 
 .combo img {
@@ -225,13 +224,16 @@ body{
 .combo-price {
   font-size: 18px;
   color: #ff4500;
+  margin-bottom: 20px; /* Agregar espacio inferior */
 }
 
+/* Estilos para los botones de contador */
 .counter {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; /* Centra horizontalmente */
+  justify-content: center;
+  margin-top: 10px; /* Añadir espacio superior */
 }
 
 .circle-button {
@@ -240,88 +242,204 @@ body{
   padding: 10px;
   height: 30px;
   border: none;
-  background-color:white;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border: 2px solid #0D1489; 
-  margin: 0 20px;
+  border: 2px solid #0D1489;
+  margin: 0 10px; /* Ajustar el margen */
   font-size: 18px;
-  color:#0D1489  ;
+  color: #0D1489;
   outline: none;
+  transition: all 0.3s ease; /* Agregar transición */
+}
+
+.circle-button:hover {
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  color: #fff;
 }
 
 .counter p{
   margin: 0;
 }
 
-.circle-button:hover {
-  background-color: #007bff;
-  border: 2px solid #007bff; 
-  color: #fff;
+.compra {
+  width: 20%; /* Ancho del área del carrito y total */
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carrito {
+  height: 80%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+  border-radius: 10px; /* Redondear los bordes */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.total {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+  border-radius: 10px; /* Redondear los bordes */
+  padding: 20px;
+}
+
+/* Estilos para textos y valores */
+.carrito h1,
+.total h1 {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrito p {
+  padding: 0 20px;
+  padding-top: 20px;
+  color: gray;
+  font-size: 16px; /* Ajustar tamaño de texto */
+}
+
+.total p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px; /* Ajustar tamaño de texto */
+}
+
+.valor {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 
-/* Estilos responsivos */
+
 @media screen and (max-width: 768px) {
-  .confiteria {
+  .combos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuir los combos en filas */
+  }
+
+  .combo{ /* Ancho para mostrar 2 combos por fila */
+    margin-bottom: 20px; /* Ajuste para separar las filas */
+  }
+
+  /* Ajustes para el carrito y el total */
+  .compra {
+    width: 100%;
+    margin: 25px 0;
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .combos {
-    width: 100%;
+  .carrito {
+    width: 90%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .combo {
-    width: calc(100% - 50px);
-    margin: 20px;
+  .carrito h1,
+  .total h1 {
+    font-size: 18px; /* Reducir el tamaño del título */
+    padding: 8px;
+  }
+
+  .carrito p {
+    padding: 5px 10px;
+    font-size: 12px; /* Reducir el tamaño del texto del carrito */
+  }
+
+  .total p {
+    font-size: 14px; /* Reducir el tamaño del texto del total */
+  }
+
+  .total{
+    width: 90%;
+    height: 100%;
   }
 }
-/* Oscureser imganenes de cartelera */
-.card {
-  position: relative;
+
+/* ------------LOCALIDADES------------ */
+.localidades {
+  padding: 20px; /* Agrega un espacio alrededor del contenido */
+/* Gradiente de fondo */
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+.cines {
+  max-width: 1200px; /* Limita el ancho del contenedor */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+.cines h1 {
+  text-align: center; /* Centra el título */
+  color: #FFF; /* Color del texto */
+}
+
+.espacio {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px; /* Añade espacio superior */
 }
 
-.card:hover .overlay {
-  opacity: 1;
+
+.cine {
+  width: calc(30% - 20px); /* Calcula el ancho con margen incluido */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #FFF;
 }
 
-.card-button {
-  display: none;
-}
-
-.card:hover .card-button {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.movie-details-box {
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+.contenido1 {
   padding: 20px;
-  margin-top: 20px;
 }
 
-/* --------- (Pagina) Acerca de -----------*/
+.contenido1 img {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  border-radius: 8px 8px 0 0; /* Redondea solo las esquinas superiores */
+}
+
+.cine-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cine-description {
+  color: #555;
+}
+
+/* Para tamaños más pequeños de pantalla */
+@media screen and (max-width: 768px) {
+  .cine {
+    width: calc(100% - 20px); /* Ocupar todo el ancho menos el margen */
+    margin-bottom: 20px;
+  }
+
+  .contenido1 {
+    padding: 15px; /* Reducir el padding en dispositivos móviles */
+  }
+
+  .cine-name {
+    font-size: 1.1em; /* Reducir el tamaño del nombre */
+    margin-top: 8px; /* Ajustar el margen superior */
+  }
+
+  .cine-description {
+    font-size: 0.9em; /* Reducir el tamaño de la descripción */
+  }
+}
 
 .main{
   margin-top: 25px;
@@ -373,21 +491,4 @@ body{
   max-width: 80%;
   max-height: 80%;
   object-fit: contain;
-}
-
-/* --------- Carrusel -----------*/
-
-.overlay-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
-  pointer-events: none;
-}
-
-.title-with-stroke {
-  -webkit-text-stroke-width: 0.25 px;
-  -webkit-text-stroke-color: black;
 }
