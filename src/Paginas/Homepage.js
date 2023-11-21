@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import axios from 'axios';
 import Carousel from '../Componentes/Carousel';
-import PeliculaConHover from '../Componentes/PeliculaConHover';
+import PeliculaConHoverSinNombre from '../Componentes/PeliculaConHoverSinNombre';
 
 const Homepage = () => {
   const [peliculas, setPeliculas] = useState([]);
@@ -22,7 +22,10 @@ const Homepage = () => {
           api_key: API_KEY,
         },
       });
-      setPeliculas(results);
+
+      const slicedResults = results.slice(0, 6);
+
+      setPeliculas(slicedResults);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -31,9 +34,12 @@ const Homepage = () => {
   return (
     <div>
       <Carousel />
-      <div className="row mt-10">
+      <h1 className="text-center mt-5">Peliculas</h1>
+      <div className="row d-flex justify-content-center align-items-center">
         {peliculas.map((pelicula) => (
-          <PeliculaConHover key={pelicula.id} pelicula={pelicula} imagePath={IMAGE_PATH} />
+          <div key={pelicula.id} className="col-md-4">
+            <PeliculaConHoverSinNombre pelicula={pelicula} imagePath={IMAGE_PATH} />
+          </div>
         ))}
       </div>
     </div>
@@ -41,4 +47,3 @@ const Homepage = () => {
 };
 
 export default Homepage;
-

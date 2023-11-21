@@ -26,9 +26,6 @@ function App() {
           <Route path="/DetallesPelicula/:id" element={<DetallesPelicula />} />
           <Route path="/Carousel" element={<MovieCarousel />} />
         </Routes>
-          <div className="flex-grow-1">
-            <Acerca />
-          </div>
           <div className="mt-5">
           <Footer />
           </div>

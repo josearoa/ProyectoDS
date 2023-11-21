@@ -22,7 +22,6 @@ function MainSection() {
       <p className="paragraphs">Hace unos años, un grupo apasionado de amantes del cine se unió para crear Cine Estelar, un sitio web dedicado a celebrar la magia del cine. La idea surgió de la creencia de que ir al cine no es solo ver una película, sino sumergirse en una experiencia única y emocionante. Con este objetivo en mente, decidimos construir una plataforma que no solo ofreciera información sobre las últimas películas, sino que también facilitara la planificación de tus salidas al cine.</p>
       <h2 className="subtitles">Creadores</h2>
       <div className="names">
-
         <section className="name">
           <div className="img-name" onClick={() => handleImageClick(imgjose)}>
             <img src={imgjose} alt="foto-jose" />

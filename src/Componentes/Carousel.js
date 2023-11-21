@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Carousel } from 'react-bootstrap';
 import { TiTicket } from 'react-icons/ti';
+import { NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import { NavLink } from 'react-router-dom';
 
 const MovieCarousel = () => {
   const [movies, setMovies] = useState([]);
@@ -25,21 +25,21 @@ const MovieCarousel = () => {
   }, []);
 
   return (
-    <div className="container mb-10">
+    <div className="container">
       <Carousel interval={3000}>
         {movies.map((movie) => (
           <Carousel.Item key={movie.id}>
             <img
-              style={{ width: '100%', height: '700px' }}
+              className="d-block w-100" 
               src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
               alt={movie.title}
             />
-            <div className="overlay"></div>
+            <div className="overlay-container"></div>
             <Carousel.Caption>
-              <h3>{movie.title}</h3>
+            <h3 className="title-with-stroke text-white">{movie.title}</h3>
               <div className="button-container">
                 <NavLink to={`/DetallesPelicula/${movie.id}`} className="nav-link">
-                  <button className="action-button">
+                  <button className="btn btn-danger rounded-pill action-button-carousel">
                     <TiTicket /> Comprar
                   </button>
                 </NavLink>
