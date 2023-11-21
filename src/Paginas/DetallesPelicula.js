@@ -80,7 +80,7 @@ const DetallesPelicula = () => {
                                 </div>
                                 <div className='row'>
                                     <div className='col-lg-2'></div>
-                                    <div className="movie-details-box col-lg-8">
+                                    <div className="movie-details-box col-lg-12">
                                     <DiasSemanaNav/>
                                     </div>
                                 </div>    

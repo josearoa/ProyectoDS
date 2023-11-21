@@ -1,8 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 
 const Footer = () => {
   return (
@@ -12,9 +13,9 @@ const Footer = () => {
           <div className="col-md-4 mb-1">
             <h3>Contacto</h3>
             <p>Dirección: Calle del Cine, Número 123</p>
-            <p>Email: info@cinepagina.com</p>
-            <p>Teléfono: (123) 456-7890</p>
-            <Link to="/Form">Reclamos</Link> 
+            <p>Email: info@cineestelar.com</p>
+            <p>Teléfono: (+56) 9 1234-5678</p>
+            <Link to="/Form" className="text-decoration-none custom-link">Reclamos</Link>
           </div>
           <div className="col-md-4">
             <h3>Síguenos</h3>
@@ -31,7 +32,9 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-md-4">
-            <Link to="/Acerca"><h3>Acerca de nosotros</h3></Link>
+            <Link to="/Acerca" className="text-decoration-none custom-link ">
+              <h3>Acerca de nosotros</h3>
+            </Link>
           </div>
         </div>
       </div>
