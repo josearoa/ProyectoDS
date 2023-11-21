@@ -34,7 +34,7 @@ const Homepage = () => {
   return (
     <div>
       <Carousel />
-      <h1 className="text-center mt-5">Peliculas</h1>
+      <h1 className="text-white text-center mt-5">Peliculas</h1>
       <div className="row d-flex justify-content-center align-items-center">
         {peliculas.map((pelicula) => (
           <div key={pelicula.id} className="col-md-4">

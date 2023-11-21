@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import DiasSemanaNav from '../Componentes/DiasSemanaNav';
 
 const DetallesPelicula = () => {
     const { id } = useParams();
@@ -77,9 +78,9 @@ const DetallesPelicula = () => {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+                <DiasSemanaNav/>
                 </div>
             )}
         </div>
