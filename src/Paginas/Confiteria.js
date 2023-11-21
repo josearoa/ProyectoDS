@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
-import Box from "../Componentes/Box";
+import Box from '../Componentes/Box';
 import combo1 from '../imagenes/1.png';
 import combo2 from '../imagenes/2.png';
 import combo3 from '../imagenes/3.png';
@@ -63,20 +63,32 @@ function Confiteria() {
         ))}
       </div>
       <div className='compra'>
-        <div className='carrito'>
-          <p>Carrito</p>
-          {cart.map((quantity, index) => (
-            <p key={index}>
-              {combos[index].name} x {quantity} = $ {quantity * Number(combos[index].price.slice(1))}
-            </p>
-          ))}
-        </div>
+      <div className='carrito'>
+        <h1>Detalle de compra</h1>
+        {cart.map((quantity, index) => {
+          if (quantity > 0) {
+            return (
+              <p key={index}>
+                {combos[index].name} x {quantity} = ${quantity * Number(combos[index].price.slice(1))}
+              </p>
+            );
+          }
+          return null; // No mostrar combos con cantidad 0
+        })}
+      </div>
         <div className='total'>
-        <p>Precio total</p>
-          {cart.reduce((total, quantity, index) => total + (quantity * Number(combos[index].price.slice(1))),0)}
+          <h1>Precio total</h1>
+          <div className='valor'>
+          ${cart.reduce(
+            (total, quantity, index) =>
+              total + (quantity > 0 ? quantity * Number(combos[index].price.slice(1)) : 0),
+            0
+          )}
+          </div>
         </div>
       </div>
     </div>
+
   );
 }
 
