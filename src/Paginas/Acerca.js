@@ -18,7 +18,7 @@ function MainSection() {
         </Col>
       </Row>
 
-      <Row className="mt-5">
+      <Row className="justify-content-center mt-5">
         <Col md={4} className="text-center">
           <Image src={imgjose} roundedCircle className="about-us-team-member" />
           <h4 className="about-us-team-member-name">José Aguilera</h4>

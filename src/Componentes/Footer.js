@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import Logo from '../imagenes/Logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
@@ -30,11 +31,10 @@ const Footer = () => {
                 <FontAwesomeIcon icon={faInstagram} size="2xl" className="text-white" />
               </a>
             </div>
+            <Link to="/Acerca" className="text-decoration-none custom-link"><h3 className='mt-4 text-center'>¿Quiénes somos?</h3></Link>
           </div>
           <div className="col-md-4">
-            <Link to="/Acerca" className="text-decoration-none custom-link ">
-              <h3>Acerca de nosotros</h3>
-            </Link>
+          <img src={Logo} className="footer-logo" alt="logo>" />
           </div>
         </div>
       </div>

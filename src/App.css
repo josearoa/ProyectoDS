@@ -186,6 +186,15 @@ body{
   max-width: 600px;
 }
 
+.form-img {
+height: 75px;
+}
+
+.form-img-login{
+  height: 70px;
+  }
+
+
 /* -----------CONFITERIA-------------------- */
 /* Estilos base */
 .confiteria {
@@ -488,12 +497,15 @@ body{
 .about-us-team-member-name {
   font-size: 20px;
   font-weight: bold;
+  color: rgb(116, 199, 231);
 }
 
 .about-us-team-member-role {
   font-size: 16px;
   color: #c8d3dd;
 }
+
+
 
 /* ----------CARRUSEL------------ */
 .custom-carousel {
@@ -684,11 +696,16 @@ body{
 /* ------- Footer --------- */
 
 .custom-link {
-  color: white;
-  transition: color 0.3s ease; /* Agrega una transición suave al cambio de color */
+  color: rgb(255, 255, 255);
+  transition: color 0.3s ease;
 }
 
 .custom-link:hover {
-  color: #007bff; /* Cambia el color a azul al pasar el ratón sobre el enlace */
-  text-decoration: none; /* Opcional: quitar el subrayado en hover */
+  color: #007bff; 
+  text-decoration: none; 
+}
+
+.footer-logo {
+  height: 180px;
+  width: 320px;
 }

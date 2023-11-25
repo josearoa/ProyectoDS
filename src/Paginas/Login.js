@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Alert } from 'react-bootstrap';
+import logo_mini from '../imagenes/logo_mini.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
@@ -6,6 +8,7 @@ const AuthForm = () => {
   const [loginData, setLoginData] = useState({ email: '', password: '' });
   const [signupData, setSignupData] = useState({ fullName: '', email: '', password: '' });
   const [isLogin, setIsLogin] = useState(true);
+  const [alert, setAlert] = useState(null);
 
   const handleLoginChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -17,26 +20,40 @@ const AuthForm = () => {
 
   const handleFormToggle = () => {
     setIsLogin(!isLogin);
+    // Cerrar la alerta al cambiar entre formularios
+    setAlert(null);
   };
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     // Lógica para enviar datos de inicio de sesión
     console.log('Login Data:', loginData);
+    // Simulación de alerta de éxito
+    setAlert({ type: 'success', message: 'Inicio de sesión exitoso' });
+    // Lógica adicional si es necesario
   };
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     // Lógica para enviar datos de registro
     console.log('Signup Data:', signupData);
+    // Simulación de alerta de éxito
+    setAlert({ type: 'success', message: 'Registro exitoso' });
+    // Lógica adicional si es necesario
   };
-
 
   return (
     <div className="auth-container">
-      <div className="auth-card">
+      <div className="auth-card mb-5">
+        {/* Alerta de éxito o error */}
+        {alert && (
+          <Alert variant={alert.type} onClose={() => setAlert(null)} dismissible>
+            {alert.message}
+          </Alert>
+        )}
+
         <div className="auth-header">
-          <h2>{isLogin ? 'Iniciar Sesion' : 'Registrate'}</h2>
+          <h2>{isLogin ? 'Iniciar Sesión' : 'Regístrate'}<span><img src={logo_mini} className='form-img-login' alt='hola'/></span></h2>
         </div>
         <div className="auth-body">
           {isLogin ? (
@@ -109,7 +126,7 @@ const AuthForm = () => {
           <p>
             {isLogin ? "¿No te has registrado? " : '¿Ya tienes cuenta? '}
             <span className="link" onClick={handleFormToggle}>
-              {isLogin ? 'Registrate' : 'Inica sesion'}
+              {isLogin ? 'Regístrate' : 'Inicia sesión'}
             </span>
           </p>
         </div>
@@ -117,6 +134,5 @@ const AuthForm = () => {
     </div>
   );
 };
-
 
 export default AuthForm;
