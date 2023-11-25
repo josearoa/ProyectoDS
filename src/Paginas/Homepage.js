@@ -5,6 +5,7 @@ import axios from 'axios';
 import Carousel from '../Componentes/Carousel';
 import PeliculaConHoverSinNombre from '../Componentes/PeliculaConHoverSinNombre';
 import { BiCameraMovie } from "react-icons/bi";
+import { NavLink } from 'react-router-dom';
 
 const Homepage = () => {
   const [peliculas, setPeliculas] = useState([]);
@@ -47,6 +48,11 @@ const Homepage = () => {
               imagePath={IMAGE_PATH}
             />
           ))}
+        </div>
+        <div className="text-center mb-5">
+          <NavLink to="/Cartelera">
+            <button className="btn btn-danger rounded zoom-hover">Ver más películas</button>
+          </NavLink>
         </div>
       </div>
     </div>

@@ -76,11 +76,11 @@ const MovieCarousel = () => {
               />
               <div className="opacity-layer"></div>
               <Carousel.Caption>
-                <h3>{movie.title}</h3>
-                <p>{movie.genre_ids.slice(0, 2).map(mapGenreIdToName).filter(Boolean).join(', ')} - {movie.runtime} minutos </p>
+                <h3 className='text-xl'>{movie.title}</h3>
+                <p className='text-md'>{movie.genre_ids.slice(0, 2).map(mapGenreIdToName).filter(Boolean).join(', ')} - {movie.runtime} minutos </p>
                 <div className="button-container">
                   <NavLink to={`/DetallesPelicula/${movie.id}`} className="nav-link">
-                    <button className="btn btn-danger rounded-pill action-button-carousel">
+                    <button className="btn btn-danger rounded-pill action-button-carousel btn-sm-md">
                       <TiTicket style={{ verticalAlign: 'middle' }}/> Comprar
                     </button>
                   </NavLink>

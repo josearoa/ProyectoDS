@@ -8,7 +8,7 @@ const PeliculaConHoverSinNombre = ({ pelicula, imagePath }) => {
 
     return (
         <div className="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div className="card h-100 pelicula-custom">
+            <div className="card h-100 pelicula-custom mx-auto">
                 <img src={`${imagePath}${poster_path}`} className="card-img-top" alt={title} />
                 <div className="overlay">
                     <NavLink to={`/DetallesPelicula/${pelicula.id}`} className="card-button">

@@ -42,7 +42,7 @@ function Cartelera() {
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Buscar películas"
+                        placeholder="🔎 Buscar películas"
                         value={buscadorKey}
                         onChange={handleInputChange}
                     />

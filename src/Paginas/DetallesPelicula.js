@@ -104,7 +104,7 @@ const DetallesPelicula = () => {
                     ></iframe>
                 )}
             </div>
-            <div className="container superp detalle-pelicula">
+            <div className="container superp detalle-pelicula mb-4">
                 {pelicula && (
                     <div >
                         <div className="row">
