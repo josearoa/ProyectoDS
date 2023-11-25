@@ -4,6 +4,7 @@ import '../App.css';
 import axios from 'axios';
 import Carousel from '../Componentes/Carousel';
 import PeliculaConHoverSinNombre from '../Componentes/PeliculaConHoverSinNombre';
+import { BiCameraMovie } from "react-icons/bi";
 
 const Homepage = () => {
   const [peliculas, setPeliculas] = useState([]);
@@ -23,7 +24,7 @@ const Homepage = () => {
         },
       });
 
-      const slicedResults = results.slice(0, 6);
+      const slicedResults = results.slice(0, 8);
 
       setPeliculas(slicedResults);
     } catch (error) {
@@ -34,15 +35,21 @@ const Homepage = () => {
   return (
     <div>
       <Carousel />
-      <div className="container mb-2">
-            <h1 className="text-white text-center mt-4 mb-3">Peliculas</h1>
-            <div className="row">
-                {peliculas.map((pelicula) => (
-                    <PeliculaConHoverSinNombre key={pelicula.id} pelicula={pelicula} imagePath={IMAGE_PATH} />
-                ))}
-            </div>
+      <div className="container mt-5">
+      <h2 className="rounded-title-container text-white mt-2 mb-3">
+        Peliculas <BiCameraMovie style={{ verticalAlign: 'middle' }} />
+      </h2>
+        <div className="row justify-content-center">
+          {peliculas.map((pelicula) => (
+            <PeliculaConHoverSinNombre
+              key={pelicula.id}
+              pelicula={pelicula}
+              imagePath={IMAGE_PATH}
+            />
+          ))}
         </div>
       </div>
+    </div>
   );
 };
 

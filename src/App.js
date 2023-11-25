@@ -14,12 +14,14 @@ import Formulario from './Paginas/Formulario';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
   return (
     <Router>
       <div className="App d-flex flex-column min-vh-100">
         <Navbar />
         <Routes>
-          <Route path="/Homepage" element={<HomePage />} />
+          <Route index element={<HomePage />} />
+          <Route path='/HomePage' element={<HomePage />} />
           <Route path="/Cartelera" element={<Cartelera />} />
           <Route path="/Localidades" element={<Localidades />} />
           <Route path="/Confiteria" element={<Confiteria />} />
@@ -29,9 +31,10 @@ function App() {
           <Route path="/Acerca" element={<Acerca />} />
           <Route path="/Form" element={<Formulario />} />
         </Routes>
-          <div className="footer mt-auto py-3 bg-dark">
+
+        <div className="footer mt-auto py-3 bg-dark">
           <Footer />
-          </div>
+        </div>
       </div>
     </Router>
   );

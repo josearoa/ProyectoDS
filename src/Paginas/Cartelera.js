@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PeliculaConHover from '../Componentes/PeliculaConHover'; 
+import PeliculaConHoverSinNombre2 from '../Componentes/PeliculaConHoverSinNombre2';
 
 function Cartelera() {
     const API_URL = "https://api.themoviedb.org/3";
@@ -32,23 +32,25 @@ function Cartelera() {
 
     const handleInputChange = (event) => {
         setBuscadorKey(event.target.value);
-    }
+    } 
 
     return (
         <div className="container">
             <h1 className="text-white text-center mt-4 mb-3">Cartelera</h1>
-            <div className="mb-4">
-                <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Buscar película..."
-                    value={buscadorKey}
-                    onChange={handleInputChange}
-                />
-            </div>
             <div className="row">
+                <div className="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mb-4">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Buscar películas"
+                        value={buscadorKey}
+                        onChange={handleInputChange}
+                    />
+                </div>
                 {peliculas.map((pelicula) => (
-                    <PeliculaConHover key={pelicula.id} pelicula={pelicula} imagePath={IMAGE_PATH} />
+                    <div key={pelicula.id} className='col-lg-3 col-md-4 col-sm-6 mb-4'>
+                        <PeliculaConHoverSinNombre2 key={pelicula.id} pelicula={pelicula} imagePath={IMAGE_PATH} />
+                    </div>
                 ))}
             </div>
         </div>
