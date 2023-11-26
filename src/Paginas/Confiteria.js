@@ -7,25 +7,26 @@ import combo3 from '../imagenes/3.png';
 
 function Confiteria() {
   const [cart, setCart] = useState([]);
+  const [showAlert, setShowAlert] = useState(false);
 
   const combos = [
     {
-      name: 'Combo 1',
+      name: 'Palomitas Supreme',
       image: combo1,
-      description: 'Descripción del combo 1',
-      price: '$10'
+      description: 'Palomitas con caramelo, nachos y refresco.',
+      price: '$3500'
     },
     {
-      name: 'Combo 2',
+      name: 'Cinema Crunch',
       image: combo2,
-      description: 'Descripción del combo 2',
-      price: '$20'
+      description: 'Palomitas saladas, pretzels y bebida.',
+      price: '$5000'
     },
     {
-      name: 'Combo 3',
+      name: 'Sweet Popcorn Bliss',
       image: combo3,
-      description: 'Descripción del combo 3',
-      price: '$15'
+      description: 'Palomitas dulces, chocolate y refresco.',
+      price: '$4000'
     }
   ];
 
@@ -41,6 +42,20 @@ function Confiteria() {
       newCart[comboIndex]--;
     }
     setCart(newCart);
+  };
+
+  const handleCompraComboClick = () => {
+    const combosEnCarrito = cart.some(quantity => quantity > 0);
+  
+    if (combosEnCarrito) {
+      setShowAlert(true);
+    } else {
+      alert("Agrega combos al carrito antes de realizar la compra.");
+    }
+  };
+
+  const handleCloseAlert = () => {
+    setShowAlert(false);
   };
 
   return (
@@ -85,9 +100,21 @@ function Confiteria() {
             0
           )}
           </div>
+          <div className='mt-3 d-flex justify-content-center'>
+          <button type="button" className="btn btn-primary" onClick={handleCompraComboClick}>
+            Comprar Combos
+          </button>
+          </div>
         </div>
       </div>
+      {showAlert && (
+            <div className="alert alert-success text-center mx-auto" role="alert">
+              Su compra de ${cart.reduce((total, quantity, index) => total + (quantity > 0 ? quantity * Number(combos[index].price.slice(1)) : 0), 0)} está siendo procesada. ¡Gracias por elegirnos! Cine Estelar ©
+              <button type="button" className="btn-close" aria-label="Close" onClick={handleCloseAlert}></button>
+            </div>
+          )}
     </div>
+    
 
   );
 }

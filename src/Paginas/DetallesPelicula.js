@@ -13,7 +13,6 @@ const DetallesPelicula = () => {
     const [director, setDirector] = useState('');
     const [reparto, setReparto] = useState([]);
     const [trailerKey, setTrailerKey] = useState('');
-    const [horarioSeleccionado, setHorarioSeleccionado] = useState('');
 
     useEffect(() => {
         const fetchPelicula = async () => {
@@ -55,40 +54,6 @@ const DetallesPelicula = () => {
 
         fetchPelicula();
     }, [id]);
-
-    const handleHorarioSeleccionado = (horario) => {
-        setHorarioSeleccionado(horario);
-    };
-
-    const Entradas = () => {
-        const [cantidadEntradas, setCantidadEntradas] = useState(0);
-
-        const handleIncrement = () => {
-            setCantidadEntradas(cantidadEntradas + 1);
-        };
-
-        const handleDecrement = () => {
-            if (cantidadEntradas > 0) {
-                setCantidadEntradas(cantidadEntradas - 1);
-            }
-        };
-
-        if (horarioSeleccionado) {
-            return (
-                <div>
-                    <h2>Entradas</h2>
-                    <p>Horario seleccionado: {horarioSeleccionado}</p>
-                    <div className="cantidad-entradas">
-                        <button onClick={handleDecrement}>-</button>
-                        <span>{cantidadEntradas}</span>
-                        <button onClick={handleIncrement}>+</button>
-                    </div>
-                    <button className="btn-agregar">Agregar al carrito</button>
-                </div>
-            );
-        }
-        return null;
-    };
 
     return (
         <div>
@@ -138,8 +103,7 @@ const DetallesPelicula = () => {
                                 <div className='row'>
                                     <div className='col-lg-2'></div>
                                     <div className="movie-details-box col-lg-12 horario">
-                                        <DiasSemanaNav handleHorarioSeleccionado={handleHorarioSeleccionado} />
-                                        <Entradas />
+                                        <DiasSemanaNav id={id}/>
                                     </div>
                                 </div>    
                             </div>

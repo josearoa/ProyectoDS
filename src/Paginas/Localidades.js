@@ -8,19 +8,19 @@ import cine3 from '../imagenes/cine3.png';
 function Localidades() {
   const cines = [
     {
-      name: 'CINE 1',
+      name: 'CINE OASIS PEÑALOLEN',
       image: cine1,
-      description: 'Descripción del cine 1',
+      description: 'Disfruta de lo mejor en entretenimiento en nuestro oasis cinematográfico. Experimenta películas premium, palomitas frescas y comodidad única en el corazón del Oasis Mall.',
     },
     {
-      name: 'CINE 2',
+      name: 'CINE SUNRISE ALAMEDA',
       image: cine2,
-      description: 'Descripción del cine 2',
+      description: 'Despierta tus sentidos en nuestro cine exclusivo. Sumérgete en proyecciones de alta gama, ambiente soleado y asientos VIP en Sunrise Plaza.',
     },
     {
-      name: 'CINE 3',
+      name: 'CINE LUNA PARK ÑUÑOA',
       image: cine3,
-      description: 'Descripción del cine 3',
+      description: 'Vive la magia del cine bajo las estrellas. Experimenta noches mágicas con vistas espectaculares y emocionantes proyecciones al aire libre en Luna Park.',
     }
   ];
 
