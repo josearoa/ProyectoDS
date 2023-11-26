@@ -38,7 +38,7 @@ const Homepage = () => {
       <Carousel />
       <div className="container mt-5">
       <h2 className="rounded-title-container text-white mt-2 mb-3">
-        Peliculas <BiCameraMovie style={{ verticalAlign: 'middle' }} />
+        Películas <BiCameraMovie style={{ verticalAlign: 'middle' }} />
       </h2>
         <div className="row justify-content-center">
           {peliculas.map((pelicula) => (
